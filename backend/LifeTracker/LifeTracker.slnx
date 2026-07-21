@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="LifeTracker.API/LifeTracker.API.csproj" />
+  <Project Path="LifeTracker.Application/LifeTracker.Application.csproj" />
+  <Project Path="LifeTracker.Domain/LifeTracker.Domain.csproj" />
+  <Project Path="LifeTracker.Infrastructure/LifeTracker.Infrastructure.csproj" />
+</Solution>
