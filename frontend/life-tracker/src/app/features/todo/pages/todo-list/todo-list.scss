@@ -1,0 +1,23 @@
+.todo-list {
+  min-height: 100%;
+}
+
+.page-title {
+  font: var(--mat-sys-headline-medium);
+  letter-spacing: -0.02em;
+}
+
+.page-section {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.page-section:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.empty-state {
+  background: var(--mat-sys-surface-container-low);
+  border-radius: 0.75rem;
+}

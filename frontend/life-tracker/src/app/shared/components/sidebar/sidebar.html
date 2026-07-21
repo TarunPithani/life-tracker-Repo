@@ -1,0 +1,20 @@
+<aside class="app-sidebar bg-light border-end" [class.is-open]="isOpen">
+  <nav class="nav nav-pills flex-column gap-1 p-3" aria-label="Main navigation">
+    <a
+      class="nav-link d-flex align-items-center gap-3"
+      routerLink="/dashboard"
+      routerLinkActive="active"
+    >
+      <i class="bi bi-speedometer2"></i>
+      <span>Dashboard</span>
+    </a>
+    <a
+      class="nav-link d-flex align-items-center gap-3"
+      routerLink="/todo"
+      routerLinkActive="active"
+    >
+      <i class="bi bi-check2-square"></i>
+      <span>Todo</span>
+    </a>
+  </nav>
+</aside>

@@ -1,0 +1,24 @@
+<header class="app-header navbar navbar-dark bg-dark px-3">
+  <button
+    class="btn btn-dark d-lg-none"
+    type="button"
+    aria-label="Toggle navigation"
+    (click)="menuToggle.emit()"
+  >
+    <i class="bi bi-list fs-4"></i>
+  </button>
+
+  <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/dashboard">
+    <i class="bi bi-activity"></i>
+    <span>Life Tracker</span>
+  </a>
+
+  <div class="ms-auto d-flex align-items-center gap-3">
+    <button class="btn btn-dark" type="button" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+    </button>
+    <button class="btn btn-dark" type="button" aria-label="User profile">
+      <i class="bi bi-person-circle fs-5"></i>
+    </button>
+  </div>
+</header>

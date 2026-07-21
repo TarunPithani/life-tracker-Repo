@@ -1,0 +1,25 @@
+<section class="todo-filter" [formGroup]="form">
+  <div class="row g-3 align-items-center">
+    <div class="col-12 col-lg-6">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Search</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput formControlName="search" placeholder="Search todos by title" />
+        @if (form.controls.search.value) {
+          <button matSuffix mat-icon-button type="button" aria-label="Clear search" (click)="clearSearch()">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <div class="filters-label mb-2">Filters</div>
+      <mat-button-toggle-group formControlName="status" aria-label="Todo status filter">
+        <mat-button-toggle value="all">All</mat-button-toggle>
+        <mat-button-toggle value="pending">Pending</mat-button-toggle>
+        <mat-button-toggle value="completed">Completed</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+</section>

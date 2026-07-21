@@ -1,0 +1,32 @@
+<mat-card class="todo-card h-100">
+  <mat-card-header>
+    <mat-card-title>{{ todo.title }}</mat-card-title>
+    <mat-card-subtitle>
+      Due {{ todo.dueDate | date: 'mediumDate' }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="d-flex flex-wrap gap-2 mt-3">
+    <mat-chip [highlighted]="todo.isCompleted">
+      {{ todo.isCompleted ? 'Completed' : 'Pending' }}
+    </mat-chip>
+    <mat-chip>Priority {{ todo.priority }}</mat-chip>
+  </mat-card-content>
+
+  <mat-card-actions align="end" class="mt-auto">
+    @if (!todo.isCompleted) {
+      <button mat-button type="button" color="primary" (click)="complete.emit(todo.id)">
+        <mat-icon>check_circle</mat-icon>
+        Complete
+      </button>
+    }
+    <a mat-button color="primary" [routerLink]="['/todo/edit', todo.id]">
+      <mat-icon>edit</mat-icon>
+      Edit
+    </a>
+    <button mat-button type="button" color="warn" (click)="delete.emit(todo.id)">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
+  </mat-card-actions>
+</mat-card>

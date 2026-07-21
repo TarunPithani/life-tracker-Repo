@@ -1,0 +1,8 @@
+.todo-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-card mat-card-content {
+  flex: 1;
+}

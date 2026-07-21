@@ -1,0 +1,22 @@
+<div class="main-layout">
+  <app-header (menuToggle)="toggleSidebar()" />
+
+  <div class="layout-body">
+    <app-sidebar [isOpen]="isSidebarOpen()" />
+
+    @if (isSidebarOpen()) {
+      <button
+        class="sidebar-backdrop d-lg-none"
+        type="button"
+        aria-label="Close navigation"
+        (click)="closeSidebar()"
+      ></button>
+    }
+
+    <main class="content" (click)="closeSidebar()">
+      <router-outlet />
+    </main>
+  </div>
+
+  <app-footer />
+</div>

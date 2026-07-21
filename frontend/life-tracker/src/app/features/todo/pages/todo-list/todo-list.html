@@ -1,0 +1,37 @@
+<section class="todo-list container-fluid py-4 px-3 px-md-4">
+  <div class="page-section d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+    <h1 class="page-title mb-0">Life Tracker</h1>
+    <a mat-flat-button color="primary" routerLink="/todo/create">
+      <mat-icon>add</mat-icon>
+      Add Todo
+    </a>
+  </div>
+
+  <div class="page-section mb-4">
+    <app-todo-filter (filterChange)="onFilterChange($event)" />
+  </div>
+
+  <div class="page-section">
+    @if (errorMessage()) {
+      <div class="alert alert-danger" role="alert">{{ errorMessage() }}</div>
+    }
+
+    @if (filteredTodos().length === 0) {
+      <div class="empty-state text-center py-5">
+        <p class="mb-0 text-secondary">No todos found.</p>
+      </div>
+    } @else {
+      <div class="row g-3">
+        @for (todo of filteredTodos(); track todo.id) {
+          <div class="col-12 col-md-6 col-xl-4">
+            <app-todo-card
+              [todo]="todo"
+              (complete)="onComplete($event)"
+              (delete)="onDelete($event)"
+            />
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

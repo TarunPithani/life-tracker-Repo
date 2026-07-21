@@ -1,0 +1,25 @@
+.main-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--bs-gray-100);
+}
+
+.layout-body {
+  min-height: 0;
+  display: flex;
+}
+
+.content {
+  min-width: 0;
+  flex: 1;
+  overflow: auto;
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  z-index: 1010;
+  inset: 4rem 0 0;
+  border: 0;
+  background: rgb(0 0 0 / 35%);
+}

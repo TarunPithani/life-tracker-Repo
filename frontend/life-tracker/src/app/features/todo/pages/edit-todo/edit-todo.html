@@ -1,0 +1,19 @@
+<section class="edit-todo container-fluid py-4 px-3 px-md-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h1 class="h3 mb-1">Edit Todo</h1>
+      <p class="text-secondary mb-0">Update an existing task.</p>
+    </div>
+    <a mat-stroked-button routerLink="/todo">Back</a>
+  </div>
+
+  @if (errorMessage()) {
+    <div class="alert alert-danger" role="alert">{{ errorMessage() }}</div>
+  } @else if (todo()) {
+    <app-todo-form
+      [todo]="todo()"
+      submitLabel="Update"
+      (formSubmit)="onSubmit($event)"
+    />
+  }
+</section>

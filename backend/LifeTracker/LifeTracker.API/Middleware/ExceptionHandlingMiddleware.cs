@@ -26,6 +26,15 @@ public class ExceptionHandlingMiddleware(RequestDelegate next, ILogger<Exception
             NotFoundException notFound => (
                 HttpStatusCode.NotFound,
                 CreateErrorBody(notFound.Message)),
+            UnauthorizedAppException unauthorized => (
+                HttpStatusCode.Unauthorized,
+                CreateErrorBody(unauthorized.Message)),
+            ConflictException conflict => (
+                HttpStatusCode.Conflict,
+                CreateErrorBody(conflict.Message)),
+            BadRequestException badRequest => (
+                HttpStatusCode.BadRequest,
+                CreateErrorBody(badRequest.Message)),
             ValidationException validation => (
                 HttpStatusCode.BadRequest,
                 CreateValidationErrorBody(validation)),
